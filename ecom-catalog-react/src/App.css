@@ -1,138 +1,239 @@
-/* App.css */
-
-/* Reset some default styling */
+/* === Base Styling === */
 body {
-  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f7f9fc;
+  margin: 0;
+  padding: 0;
   color: #333;
+  background-color: #f9f9f9;
 }
 
+/* === App Container === */
 .container {
-  padding: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-/* Header */
-h1 {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #1e3a8a;
-}
-
-/* Input and select styling */
-input.form-control,
-select.form-control {
-  border: 2px solid #ccc;
+/* === Header === */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e90ff;
+  padding: 15px 30px;
   border-radius: 8px;
-  padding: 10px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  color: white;
+  box-shadow: 0 4px 10px rgba(30, 144, 255, 0.3);
 }
 
-input.form-control:focus,
-select.form-control:focus {
-  border-color: #1e3a8a;
-  box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
-  outline: none;
+.welcome-text {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-/* Card styling */
-.card_ {
-  background-color: white;
+.btn.btn-danger {
+  background-color: #ff4d4d;
   border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn.btn-danger:hover {
+  background-color: #e04343;
+}
+
+/* === Login Styling === */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(100deg, #010134, #9b66d9);
+}
+
+.login-box {
+  background: #9d00860e;
+  color: #fff;
+  padding: 120px 60px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 35px rgba(255, 255, 255, 0.3);
+  width: 500px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  letter-spacing: 5.5px;
+}
+
+.login-subtitle {
+  margin-bottom: 35px;
+  color: #d2cfcf;
+  font-size: 1.05rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 7px;
+  border: 2px solid #7f6e98;
+  font-size: 1rem;
+  background:transparent;
+  color: rgb(52, 7, 124);
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #550481;
+  box-shadow: 0 0 8px rgba(104, 100, 106, 0.3);
+  background: rgb(189, 165, 242);
+}
+.login-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn.outline {
+  background: transparent;
+  border: 2.2px solid #fff;
+  color: #ece3e3;
+}
+
+.login-btn.outline:hover {
+  background: rgba(50, 1, 54, 0.426);
+  border:2.8px solid rgb(139, 96, 161)
+}
+
+
+.forgot-password {
+  text-align: right;
+  width: 100%;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.signup-link {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.signup-link span {
+  color: #aaa;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.social-login i {
+  cursor: pointer;
+  color: #fff;
+}
+
+/* === Product List === */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.col-lg-4,
+.col-md-6,
+.col-sm-12 {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+}
+
+.card_ {
+  background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 100%;
 }
 
 .card_:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.18);
 }
 
 .card-img-top {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card_:hover .card-img-top {
+  transform: scale(1.1);
 }
 
 .card-body {
-  padding: 15px;
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #1f2937;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
 }
 
 .card-text {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* Logout button */
-button.btn-danger {
-  background-color: #dc2626;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-size: 0.95rem;
-  transition: background-color 0.3s ease;
-}
-
-button.btn-danger:hover {
-  background-color: #b91c1c;
-  cursor: pointer;
-}
-
-/* Welcome text */
-.text-end {
-  text-align: right;
-  font-size: 0.95rem;
-  color: #4b5563;
-  margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-  .card-img-top {
-    height: 180px;
-  }
-
-  .text-end {
-    text-align: center;
-  }
-}
-
-/* App.css additions */
-
-.app-header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 10px;
-}
-
-.welcome-text {
+  flex-grow: 1;
   font-size: 1rem;
-  color: #4b5563;
-  margin: 0;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em;
 }
 
-.logout-btn {
-  padding: 8px 16px;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  background-color: #dc2626;
-  border: none;
-  color: white;
-  transition: background-color 0.3s ease;
+.card-text strong {
+  color: #007bff;
+  font-size: 1.25rem;
+  font-weight: 800;
 }
 
-.logout-btn:hover {
-  background-color: #b91c1c;
-  cursor: pointer;
+/* === Responsive Fixes === */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
 }

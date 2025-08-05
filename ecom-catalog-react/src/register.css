@@ -1,0 +1,53 @@
+/* .register-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #c3ecf4, #f5f7fa);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.register-box {
+  background: white;
+  padding: 30px;
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.register-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.register-input,
+.register-textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.register-textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.register-btn:hover {
+  background: #0056b3;
+} */

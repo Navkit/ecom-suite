@@ -1,51 +1,66 @@
 import React, { useState } from 'react';
-import './Login.css';
+import './App.css';
 
-const Login = ({ setToken }) => {
+
+const Login = ({ setToken, onSwitchToSignup }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:8081/auth/login', {
+      const res = await fetch('http://localhost:8081/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
 
-      if (response.ok) {
-        const data = await response.json();
+      if (res.ok) {
+        const data = await res.json();
         localStorage.setItem('token', data.jwtToken);
         setToken(data.jwtToken);
       } else {
-        alert('Invalid credentials');
+        alert("Invalid credentials");
       }
     } catch (err) {
-      console.error("Login failed", err);
+      console.error("Login error:", err);
     }
   };
 
   return (
     <div className="login-wrapper">
-      <div className="login-box">
-        <h2>Login</h2>
+      <div className="login-box dark">
+        <h2 className="login-title">LOGIN</h2>
+        <p className="login-subtitle">Please enter your login and password!</p>
+
         <input
           className="login-input"
+          type="email"
           placeholder="Email"
           value={email}
           onChange={e => setEmail(e.target.value)}
-          type="email"
-          autoComplete="username"
         />
+
         <input
           className="login-input"
+          type="password"
           placeholder="Password"
           value={password}
-          type="password"
           onChange={e => setPassword(e.target.value)}
-          autoComplete="current-password"
         />
-        <button className="login-btn" onClick={handleLogin}>Login</button>
+
+        <p className="forgot-password">Forgot password?</p>
+
+        <button className="login-btn outline" onClick={handleLogin}>LOGIN</button>
+
+        <div className="social-login">
+          <i className="fab fa-facebook-f"></i>
+          <i className="fab fa-twitter"></i>
+          <i className="fab fa-google"></i>
+        </div>
+
+        <p className="signup-link">
+          Don't have an account? <span onClick={onSwitchToSignup}>Sign Up</span>
+        </p>
       </div>
     </div>
   );
